@@ -33,7 +33,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Update data file
-        run: sed  '/\[<p id="myname">\]/a Hello World'  index.html 
+        run: sed  '/<p id="myname">/a Hello World'  index.html 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
