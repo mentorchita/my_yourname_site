@@ -33,7 +33,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Update data file
-        run: sed -i 's@<p id="myname"></p>@<p id="myname">Test</p>@g' index.html
+        run: sed -i 's@<p id="myname"></p>@<p id="myname">${{ secrets.NAME }}</p>@g' index.html
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
@@ -43,3 +43,10 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Sta
