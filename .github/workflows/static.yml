@@ -34,11 +34,10 @@ jobs:
       - name: Update data file
         run: |
          sed -i 's@<p id="myname"></p>@<p id="myname">$MY_NAME</p>@g' index.html
-         echo $MY_NAME
+         echo "$MY_NAME"
+         echo $NEW_NAME
          SECRET_HANDLE="${{ secrets.MY_SECRET_NAME }}"
-         RETRIEVED_SECRET=$(secret-store retrieve-secret "$SECRET_HANDLE")
-         echo "::add-mask::$RETRIEVED_SECRET"
-         echo "We retrieved our masked secret: $RETRIEVED_SECRET"
+         echo "We retrieved our masked secret: $SECRET_HANDLE"
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
