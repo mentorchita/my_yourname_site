@@ -35,7 +35,8 @@ jobs:
         run: |
          sed -i 's@<p id="myname"></p>@<p id="myname">$MY_NAME</p>@g' index.html
          echo $MY_NAME
-         RETRIEVED_SECRET=$(secret-store retrieve-secret "$MY_NAME")
+         SECRET_HANDLE="${{ secrets.MY_SECRET_NAME }}"
+         RETRIEVED_SECRET=$(secret-store retrieve-secret "$SECRET_HANDLE")
          echo "::add-mask::$RETRIEVED_SECRET"
          echo "We retrieved our masked secret: $RETRIEVED_SECRET"
       - name: Setup Pages
