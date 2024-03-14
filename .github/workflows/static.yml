@@ -34,7 +34,7 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Update data file 2
         run: |
-         sed -i 's@<p id="myname"></p>@<p id="myname">${{ vars.MY_NAME }}</p>@g' index.html      
+         sed -i 's@<p id="myname"></p>@<p id="myname">Mykhailo Myrosh</p>@g' index.html      
          cat index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
