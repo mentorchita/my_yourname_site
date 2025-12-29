@@ -397,5 +397,11 @@
 					$window.on('load', function() {
 						$main._show(location.hash.substr(1), true);
 					});
+	        document.addEventListener("DOMContentLoaded", () => {
+           const el = document.getElementById("myname");
+           if (el && window.MY_NAME) {
+           el.textContent = window.MY_NAME;
+           }
+           });
 
 })(jQuery);
